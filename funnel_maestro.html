@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Alexander Figueredo | Salud, Libertad y Recursos para Hispanos en EEUU</title>
+<meta name="description" content="Médico cubano con más de una década de experiencia en urología. Guías de salud, preparación NCLEX y un boletín sin censura para la comunidad hispana en Estados Unidos.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dr. Alexander Figueredo | Salud, Libertad y Recursos para Hispanos en EEUU">
+<meta property="og:description" content="Médico cubano con más de una década de experiencia en urología. Guías de salud, preparación NCLEX y un boletín sin censura para la comunidad hispana en Estados Unidos.">
+<meta property="og:locale" content="es_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dr. Alexander Figueredo | Salud, Libertad y Recursos para Hispanos en EEUU">
+<meta name="twitter:description" content="Médico cubano con más de una década de experiencia en urología. Guías de salud, preparación NCLEX y un boletín sin censura para la comunidad hispana en Estados Unidos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul:#0b2545;
+    --azul2:#13315c;
+    --azul3:#1d4172;
+    --oro:#c9a227;
+    --oro-claro:#e9d27a;
+    --blanco:#ffffff;
+    --gris:#f4f6fa;
+    --gris-borde:#dde3ec;
+    --texto:#1c2536;
+    --texto-suave:#54607a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--texto);
+    line-height:1.65;
+    background:var(--blanco);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px;}
+  h1,h2,h3{font-family:'Merriweather',serif;line-height:1.25;}
+  a{text-decoration:none;}
+
+  /* NAV */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,37,69,.97);
+    backdrop-filter:blur(6px);
+    color:var(--blanco);
+    border-bottom:1px solid rgba(201,162,39,.25);
+  }
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .nav .logo{font-family:'Merriweather',serif;font-weight:900;font-size:1.1rem;color:#fff;}
+  .nav .logo .oro{color:var(--oro-claro);}
+  .nav .links{display:flex;gap:26px;}
+  .nav .links a{color:#cfd8e6;font-size:.9rem;font-weight:600;transition:color .2s;}
+  .nav .links a:hover{color:var(--oro-claro);}
+  @media(max-width:780px){.nav .links{display:none;}}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 55%,var(--azul3) 100%);
+    color:var(--blanco);
+    padding:80px 22px 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;top:-120px;right:-120px;
+    width:380px;height:380px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,162,39,.22),transparent 70%);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.3fr 1fr;gap:50px;align-items:center;
+    position:relative;z-index:2;
+  }
+  .hero .badge{
+    display:inline-block;background:rgba(201,162,39,.18);
+    color:var(--oro-claro);border:1px solid rgba(201,162,39,.5);
+    padding:8px 18px;border-radius:50px;font-size:.76rem;font-weight:700;
+    letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;
+  }
+  .hero h1{font-size:2.8rem;font-weight:900;margin-bottom:20px;}
+  .hero h1 .oro{color:var(--oro-claro);}
+  .hero p.lead{font-size:1.18rem;color:#d4ddec;margin-bottom:30px;max-width:560px;}
+  .hero .checks{list-style:none;margin-bottom:34px;}
+  .hero .checks li{display:flex;align-items:flex-start;gap:11px;margin-bottom:12px;font-size:1.02rem;color:#e6ecf5;}
+  .hero .checks li::before{content:"✓";color:var(--azul);background:var(--oro);
+    width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:.85rem;flex-shrink:0;margin-top:2px;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+
+  .btn{
+    display:inline-block;font-weight:700;font-size:1rem;
+    padding:15px 30px;border-radius:50px;transition:transform .15s,box-shadow .2s;
+    cursor:pointer;border:none;font-family:'Inter',sans-serif;
+  }
+  .btn-oro{background:linear-gradient(135deg,var(--oro) 0%,#d9b53a 100%);color:var(--azul);
+    box-shadow:0 8px 24px rgba(201,162,39,.4);}
+  .btn-oro:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,162,39,.55);}
+  .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45);}
+  .btn-ghost:hover{border-color:var(--oro-claro);color:var(--oro-claro);}
+
+  /* hero card */
+  .hero-card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:20px;padding:34px 30px;text-align:center;
+    backdrop-filter:blur(4px);
+  }
+  .hero-card .avatar{
+    width:120px;height:120px;border-radius:50%;margin:0 auto 18px;
+    background:linear-gradient(135deg,var(--oro) 0%,var(--oro-claro) 100%);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Merriweather',serif;font-weight:900;font-size:2.6rem;color:var(--azul);
+    box-shadow:0 8px 26px rgba(0,0,0,.3);
+  }
+  .hero-card h3{font-size:1.3rem;margin-bottom:4px;color:#fff;}
+  .hero-card .role{color:var(--oro-claro);font-size:.9rem;font-weight:600;margin-bottom:18px;}
+  .hero-card .stats{display:flex;justify-content:space-around;border-top:1px solid rgba(255,255,255,.15);padding-top:18px;}
+  .hero-card .stat .n{font-family:'Merriweather',serif;font-weight:900;font-size:1.5rem;color:var(--oro-claro);}
+  .hero-card .stat .l{font-size:.72rem;color:#c2cde0;text-transform:uppercase;letter-spacing:.5px;}
+
+  @media(max-width:840px){
+    .hero-grid{grid-template-columns:1fr;gap:40px;}
+    .hero h1{font-size:2.1rem;}
+  }
+
+  /* SECTION GENERIC */
+  section{padding:78px 0;}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 50px;}
+  .sec-head .kicker{color:var(--oro);font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;display:block;}
+  .sec-head h2{font-size:2.1rem;color:var(--azul);margin-bottom:14px;}
+  .sec-head p{color:var(--texto-suave);font-size:1.05rem;}
+
+  /* PRODUCTS */
+  #productos{background:var(--gris);}
+  .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .prod{
+    background:#fff;border:1px solid var(--gris-borde);border-radius:18px;
+    overflow:hidden;display:flex;flex-direction:column;
+    box-shadow:0 6px 22px rgba(11,37,69,.07);transition:transform .2s,box-shadow .2s;
+  }
+  .prod:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,37,69,.14);}
+  .prod .ribbon{padding:9px;text-align:center;font-size:.74rem;font-weight:800;
+    letter-spacing:1px;text-transform:uppercase;color:#fff;}
+  .prod.salud .ribbon{background:var(--azul2);}
+  .prod.nclex .ribbon{background:#15723f;}
+  .prod.news .ribbon{background:#9a2330;}
+  .prod .pbody{padding:28px 26px;flex:1;display:flex;flex-direction:column;}
+  .prod .icon{font-size:2.4rem;margin-bottom:14px;}
+  .prod h3{font-size:1.25rem;color:var(--azul);margin-bottom:10px;}
+  .prod p.desc{color:var(--texto-suave);font-size:.95rem;margin-bottom:18px;flex:1;}
+  .prod ul{list-style:none;margin-bottom:22px;}
+  .prod ul li{font-size:.9rem;color:var(--texto);margin-bottom:9px;display:flex;gap:8px;align-items:flex-start;}
+  .prod ul li::before{content:"✓";color:var(--oro);font-weight:900;flex-shrink:0;}
+  .prod .price{font-family:'Merriweather',serif;font-weight:900;font-size:2rem;color:var(--azul);margin-bottom:4px;}
+  .prod .price small{font-size:.9rem;color:var(--texto-suave);font-weight:400;}
+  .prod .price .old{font-size:1.1rem;color:#aab3c4;text-decoration:line-through;margin-right:8px;}
+  .prod .btn{width:100%;text-align:center;margin-top:6px;}
+  @media(max-width:840px){.prod-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
+
+  /* NEWSLETTER */
+  #boletin{
+    background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 100%);
+    color:#fff;text-align:center;
+  }
+  #boletin h2{color:#fff;}
+  #boletin .sec-head .kicker{color:var(--oro-claro);}
+  #boletin .sec-head p{color:#cfd8e6;}
+  .news-box{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);
+    border-radius:20px;padding:42px 36px;max-width:640px;margin:0 auto;
+  }
+  .news-box .flag{font-size:2.2rem;margin-bottom:14px;}
+  .news-box h3{color:#fff;font-size:1.5rem;margin-bottom:12px;}
+  .news-box p{color:#d4ddec;margin-bottom:24px;}
+  .news-tiers{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+  .tier{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:18px 22px;min-width:180px;}
+  .tier .t-name{font-size:.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--oro-claro);font-weight:800;margin-bottom:6px;}
+  .tier .t-price{font-family:'Merriweather',serif;font-weight:900;font-size:1.6rem;color:#fff;}
+  .tier .t-desc{font-size:.82rem;color:#bcc8dd;margin-top:4px;}
+
+  /* TESTIMONIALS */
+  #testimonios{background:var(--gris);}
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .test{background:#fff;border:1px solid var(--gris-borde);border-radius:16px;padding:28px 26px;box-shadow:0 5px 18px rgba(11,37,69,.06);}
+  .test .stars{color:var(--oro);font-size:1.1rem;margin-bottom:12px;letter-spacing:2px;}
+  .test p{font-size:.96rem;color:var(--texto);font-style:italic;margin-bottom:18px;}
+  .test .who{display:flex;align-items:center;gap:12px;}
+  .test .who .ini{width:44px;height:44px;border-radius:50%;background:var(--azul2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;}
+  .test .who .name{font-weight:700;color:var(--azul);font-size:.92rem;}
+  .test .who .loc{font-size:.8rem;color:var(--texto-suave);}
+  .test-note{text-align:center;margin-top:30px;font-size:.82rem;color:var(--texto-suave);font-style:italic;}
+  @media(max-width:840px){.test-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;}}
+
+  /* ABOUT */
+  #sobre .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:50px;align-items:center;}
+  #sobre .about-photo{
+    background:linear-gradient(135deg,var(--azul) 0%,var(--azul3) 100%);
+    border-radius:20px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;
+    position:relative;box-shadow:0 16px 40px rgba(11,37,69,.2);
+  }
+  #sobre .about-photo .ini{font-family:'Merriweather',serif;font-weight:900;font-size:5rem;color:var(--oro-claro);}
+  #sobre .about-photo .ribbon{position:absolute;bottom:24px;background:var(--oro);color:var(--azul);
+    font-weight:800;font-size:.82rem;padding:8px 20px;border-radius:50px;letter-spacing:.5px;}
+  #sobre h2{color:var(--azul);font-size:2rem;margin-bottom:18px;}
+  #sobre p{color:var(--texto-suave);margin-bottom:16px;font-size:1.02rem;}
+  #sobre p strong{color:var(--azul);}
+  #sobre .creds{display:flex;gap:26px;margin-top:24px;flex-wrap:wrap;}
+  #sobre .cred .n{font-family:'Merriweather',serif;font-weight:900;font-size:1.8rem;color:var(--oro);}
+  #sobre .cred .l{font-size:.82rem;color:var(--texto-suave);}
+  @media(max-width:840px){#sobre .about-grid{grid-template-columns:1fr;gap:34px;}#sobre .about-photo{max-width:300px;margin:0 auto;}}
+
+  /* FINAL CTA */
+  .final-cta{background:var(--oro);color:var(--azul);text-align:center;padding:64px 22px;}
+  .final-cta h2{font-size:2rem;margin-bottom:14px;color:var(--azul);}
+  .final-cta p{font-size:1.1rem;margin-bottom:28px;max-width:560px;margin-left:auto;margin-right:auto;}
+  .final-cta .btn-dark{background:var(--azul);color:#fff;}
+  .final-cta .btn-dark:hover{background:var(--azul2);transform:translateY(-2px);}
+
+  /* FOOTER */
+  footer{background:var(--azul);color:#9fadc6;padding:46px 22px;text-align:center;font-size:.86rem;}
+  footer .logo{font-family:'Merriweather',serif;font-weight:900;color:#fff;font-size:1.1rem;margin-bottom:8px;}
+  footer .logo .oro{color:var(--oro-claro);}
+  footer .fnav{display:flex;gap:22px;justify-content:center;margin:16px 0;flex-wrap:wrap;}
+  footer .fnav a{color:#bcc8dd;font-size:.86rem;}
+  footer .fnav a:hover{color:var(--oro-claro);}
+  footer .disc{max-width:720px;margin:16px auto 0;font-size:.76rem;color:#75839f;line-height:1.6;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="logo">Dr. Alexander <span class="oro">Figueredo</span></div>
+    <div class="links">
+      <a href="#productos">Productos</a>
+      <a href="#boletin">Boletín</a>
+      <a href="#sobre">Sobre mí</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">Médico Cubano · Houston, TX</span>
+      <h1>Salud, Libertad y Recursos <span class="oro">para los Hispanos en Estados Unidos</span></h1>
+      <p class="lead">Soy el Dr. Alexander Figueredo. Llegué de Cuba, viví lo que tú vives, y hoy uso más de una década de experiencia médica para ayudar a nuestra comunidad a navegar este país con dignidad y sin miedo.</p>
+      <ul class="checks">
+        <li>Guías prácticas de salud creadas por un médico de verdad</li>
+        <li>Preparación NCLEX para enfermeros hispanos</li>
+        <li>Verdad sin censura, de cubano a hispano</li>
+      </ul>
+      <div class="hero-cta">
+        <a href="#productos" class="btn btn-oro">Ver mis recursos</a>
+        <a href="#boletin" class="btn btn-ghost">Suscríbete gratis</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="avatar">AF</div>
+      <h3>Dr. Alexander Figueredo</h3>
+      <div class="role">Médico · Educador · Voz por la libertad</div>
+      <div class="stats">
+        <div class="stat"><div class="n">86K+</div><div class="l">Seguidores</div></div>
+        <div class="stat"><div class="n">+10</div><div class="l">Años médico</div></div>
+        <div class="stat"><div class="n">3</div><div class="l">Recursos</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- LEAD MAGNET (REGALO) -->
+<section id="regalo" style="padding: 40px 0; background: var(--oro); color: var(--azul);">
+  <div class="wrap" style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap;">
+    <div style="font-size: 3rem;">🎁</div>
+    <div style="max-width: 600px; text-align: center;">
+      <h3 style="font-family: 'Merriweather', serif; font-size: 1.5rem; margin-bottom: 8px;">Regalo para ti: Guía rápida "5 Derechos del Paciente Hispano"</h3>
+      <p style="font-weight: 500; margin-bottom: 0;">Descarga gratis los derechos que te protegen en cualquier hospital de EEUU, sin importar tu estatus.</p>
+    </div>
+    <a href="guia_5_derechos_paciente_hispano.html" class="btn btn-dark" style="background: var(--azul); color: #fff;">Descargar gratis</a>
+  </div>
+</section>
+
+<!-- MEGA BUNDLE BANNER -->
+<section style="background: var(--oro); padding: 30px 0; text-align: center;">
+  <div class="wrap">
+    <h3 style="color: var(--azul); font-size: 1.8rem; margin-bottom: 10px;">🏆 OFERTA CEO: Llévate la Colección Completa (8+ Activos)</h3>
+    <p style="color: var(--azul); font-weight: 600; margin-bottom: 20px;">Ahorra más de $150 comprando el Mega-Bundle "Estrategia Vital".</p>
+    <a href="oferta_mega_bundle_estrategia_vital.html" class="btn btn-dark" style="background: var(--azul); color: #fff; padding: 15px 40px; font-size: 1.2rem;">Ver el Mega-Bundle ($197)</a>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="productos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Herramientas reales</span>
+      <h2>Recursos creados para ti y tu familia</h2>
+      <p>No teoría. No promesas vacías. Guías prácticas hechas por un médico que vivió lo mismo que tú estás viviendo hoy.</p>
+    </div>
+    <div class="prod-grid">
+
+      <!-- Producto 1: ESTRATEGIA VITAL -->
+      <div class="prod salud" style="border: 2px solid var(--oro);">
+        <div class="ribbon" style="background: var(--oro); color: var(--azul);">Premium 2026</div>
+        <div class="pbody">
+          <div class="icon">🏆</div>
+          <span style="color: var(--oro); font-weight: 800; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;">Estrategia Vital Vol. 1</span>
+          <h3>La Biblia de la Salud en EEUU</h3>
+          <p class="desc">El manual definitivo para proteger tu salud y tu patrimonio. Aprende a negociar facturas de miles de dólares y usar la Ley de Transparencia a tu favor.</p>
+          <ul>
+            <li>Negocia facturas médicas (de $5,000 a $0)</li>
+            <li>Usa la Ley de Transparencia de 2026</li>
+            <li>Accede a Charity Care sin importar estatus</li>
+            <li>Glosario de Poder para enfrentar al hospital</li>
+          </ul>
+          <div class="price">$47 <small>USD</small></div>
+          <a href="libro_premium_estrategia_vital_vol1.html" class="btn btn-oro">Ver Detalles Premium</a>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="prod nclex">
+        <div class="ribbon">Para enfermeros</div>
+        <div class="pbody">
+          <div class="icon">🩺</div>
+          <h3>Guía Completa NCLEX para Hispanos</h3>
+          <p class="desc">El mapa paso a paso para obtener tu licencia de enfermería en EEUU. Diseñada especialmente para hispanohablantes.</p>
+          <ul>
+            <li>El proceso completo sin confusiones</li>
+            <li>Cambios del Next Generation NCLEX</li>
+            <li>Estrategias de estudio en español</li>
+            <li>Qué hacer si no apruebas</li>
+          </ul>
+          <div class="price">$49 <small>USD</small></div>
+          <!-- PENDIENTE: cuando el Dr. dé el enlace de Gumroad, poner href={enlace} y texto "Comprar ahora" -->
+          <a href="#boletin" class="btn btn-oro">Disponible muy pronto</a>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="prod news">
+        <div class="ribbon">Desde gratis</div>
+        <div class="pbody">
+          <div class="icon">📬</div>
+          <h3>Boletín "LIBERTAD Y SALUD"</h3>
+          <p class="desc">Análisis político sin censura + información de salud real, directo en tu correo dos veces por semana. De cubano a hispano, sin miedo.</p>
+          <ul>
+            <li>Verdad que los medios esconden</li>
+            <li>Consejos de salud cada semana</li>
+            <li>Análisis exclusivos para premium</li>
+            <li>Comienza gratis hoy mismo</li>
+          </ul>
+          <div class="price">$7 <small>/mes · o gratis</small></div>
+          <a href="#boletin" class="btn btn-oro">Suscribirme</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="boletin">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Únete al movimiento</span>
+      <h2>Recibe la verdad directo en tu correo</h2>
+      <p>Sin algoritmos que me silencien. Sin censura. Solo tú, yo y la verdad que importa.</p>
+    </div>
+    <div class="news-box">
+      <div class="flag">🇺🇸</div>
+      <h3>LIBERTAD Y SALUD</h3>
+      <p>Dos veces por semana: análisis político honesto e información de salud que cuida a tu familia. Empieza gratis o desbloquea todo el contenido con premium.</p>
+      <div class="news-tiers">
+        <div class="tier">
+          <div class="t-name">Gratis</div>
+          <div class="t-price">$0</div>
+          <div class="t-desc">1 artículo por semana</div>
+        </div>
+        <div class="tier">
+          <div class="t-name">Premium</div>
+          <div class="t-price">$7<span style="font-size:.9rem;font-weight:400;">/mes</span></div>
+          <div class="t-desc">Todo el contenido + exclusivos</div>
+        </div>
+      </div>
+      <a href="https://alexanderfigueredo.substack.com/subscribe" class="btn btn-oro">Suscribirme ahora</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <div class="ini">AF</div>
+      <div class="ribbon">Médico · +10 años</div>
+    </div>
+    <div>
+      <h2>Sobre el Dr. Alexander Figueredo</h2>
+      <p>Soy médico, especialista en Urología, con más de una década de experiencia. Nací en <strong>Cuba</strong> y viví en carne propia lo que significa crecer bajo el comunismo: la escasez, el miedo, las mentiras disfrazadas de promesas.</p>
+      <p>Cuando llegué a <strong>Estados Unidos</strong>, con más de una década de experiencia médica, me sentí perdido. No entendía las facturas, los seguros, los formularios en inglés. Y pensé: si yo me siento así siendo doctor, ¿cómo se sentirá la abuela que llegó sin hablar una palabra de inglés?</p>
+      <p>Ese día decidí poner todo lo que sé al servicio de mi gente. Hoy comparto guías de salud, recursos para enfermeros hispanos y la verdad sin censura con más de <strong>86,000 personas</strong> que confían en mí.</p>
+      <div class="creds">
+        <div class="cred"><div class="n">+10</div><div class="l">Años de medicina</div></div>
+        <div class="cred"><div class="n">86K+</div><div class="l">Comunidad</div></div>
+        <div class="cred"><div class="n">100%</div><div class="l">De cubano a hispano</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2>Tu familia merece información que entiendan</h2>
+  <p>Elige el recurso que necesitas hoy y da el primer paso hacia una vida más sana, informada y libre en Estados Unidos.</p>
+  <a href="#productos" class="btn btn-dark">Ver todos los recursos</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Dr. Alexander <span class="oro">Figueredo</span></div>
+  <p>Médico cubano · Houston, TX · LIBERTAD Y SALUD</p>
+  <div class="fnav">
+    <a href="#productos">Productos</a>
+    <a href="#boletin">Boletín</a>
+    <a href="#sobre">Sobre mí</a>
+  </div>
+  <p class="disc">© 2026 Dr. Alexander Figueredo. Todos los derechos reservados. El contenido de salud es estrictamente educativo e informativo, y no constituye consejo médico, diagnóstico ni tratamiento. Consulta siempre a un profesional de la salud con licencia. Las opiniones políticas son personales y expresan el derecho a la libertad de expresión.</p>
+</footer>
+
+</body>
+</html>

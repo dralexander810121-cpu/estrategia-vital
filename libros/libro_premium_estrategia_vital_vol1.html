@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESTRATEGIA VITAL Vol. 1: La Biblia de la Salud en EE. UU. | Dr. Alexander Figueredo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c5a059;
+    --gold-bright: #e5c07b;
+    --deep-blue: #0a192f;
+    --navy: #112240;
+    --slate: #8892b0;
+    --white: #e6f1ff;
+    --accent: #64ffda;
+    --red: #ff4d4d;
+  }
+
+  @page {
+    size: A4;
+    margin: 2cm;
+  }
+
+  * { box-sizing: border-box; }
+  
+  body {
+    background-color: #f0f2f5;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* CONTAINER FOR SCREEN PREVIEW */
+  .book-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    box-shadow: 0 0 50px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* COVER PAGE */
+  .cover {
+    background: linear-gradient(135deg, var(--deep-blue) 0%, var(--navy) 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 60px;
+    position: relative;
+    page-break-after: always;
+  }
+
+  .cover::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, rgba(197, 160, 89, 0.1) 0%, transparent 70%);
+  }
+
+  .series-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .book-vol {
+    font-size: 1rem;
+    color: var(--slate);
+    margin-bottom: 40px;
+  }
+
+  .main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, var(--white), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .sub-title {
+    font-size: 1.4rem;
+    max-width: 700px;
+    font-weight: 300;
+    color: var(--slate);
+    margin-bottom: 60px;
+  }
+
+  .author-badge {
+    border-top: 1px solid var(--gold);
+    padding-top: 30px;
+  }
+
+  .author-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--white);
+  }
+
+  .author-title {
+    color: var(--gold);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* CHAPTER STYLING */
+  .page-content {
+    padding: 80px 100px;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--deep-blue);
+  }
+
+  h1 { font-size: 3rem; margin-top: 0; }
+  h2 { font-size: 2.2rem; border-left: 5px solid var(--gold); padding-left: 20px; margin-top: 60px; }
+  h3 { font-size: 1.6rem; margin-top: 40px; color: var(--navy); }
+
+  p { margin-bottom: 20px; font-size: 1.1rem; color: #444; text-align: justify; }
+
+  .highlight-box {
+    background: #fdfaf3;
+    border: 1px solid #eee;
+    border-left: 8px solid var(--gold);
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .highlight-box strong { color: var(--deep-blue); font-size: 1.2rem; display: block; margin-bottom: 10px; }
+
+  .emergency-box {
+    background: #fff5f5;
+    border-left: 8px solid var(--red);
+    padding: 30px;
+    margin: 40px 0;
+  }
+
+  .table-premium {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+
+  .table-premium th {
+    background: var(--navy);
+    color: white;
+    text-align: left;
+    padding: 15px 20px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  .table-premium td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+  }
+
+  .table-premium tr:nth-child(even) { background: #f9f9f9; }
+
+  /* NAVIGATION */
+  .toc {
+    background: var(--deep-blue);
+    color: var(--white);
+    padding: 80px 100px;
+    page-break-after: always;
+  }
+
+  .toc h2 { color: var(--gold); border: none; padding: 0; }
+  .toc ol { list-style: none; padding: 0; counter-reset: item; }
+  .toc li { counter-increment: item; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; display: flex; align-items: baseline; }
+  .toc li::before { content: counter(item); color: var(--gold); font-weight: 800; margin-right: 20px; font-size: 1.2rem; }
+  .toc a { color: var(--white); text-decoration: none; font-size: 1.1rem; }
+  .toc a:hover { color: var(--gold); }
+
+  /* CHAPTER SEPARATOR */
+  .chapter-divider {
+    text-align: center;
+    margin: 60px 0;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 10px;
+  }
+
+  /* PRINT ADJUSTMENTS */
+  @media print {
+    body { background: white; }
+    .book-container { box-shadow: none; max-width: 100%; margin: 0; }
+    .cover { height: 100vh; }
+    .page-content { padding: 0; }
+    h2 { page-break-before: always; }
+  }
+
+  /* UTILS */
+  .money-save {
+    display: inline-block;
+    background: #e6fffa;
+    color: #234e52;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="book-container">
+
+  <!-- COVER PAGE -->
+  <section class="cover">
+    <div class="series-title">Estrategia Vital</div>
+    <div class="book-vol">Volumen I · Edición Premium 2026</div>
+    <h1 class="main-title">La Biblia de la Salud <br>en Estados Unidos</h1>
+    <p class="sub-title">Cómo Ahorrar Miles de Dólares, Negociar Facturas Médicas y Navegar el Sistema con la Autoridad de un Experto (Sin Hablar Inglés).</p>
+    
+    <div class="author-badge">
+      <div class="author-name">Dr. Alexander Figueredo</div>
+      <div class="author-title">Médico · Voz de la Comunidad Hispana · Houston, TX</div>
+    </div>
+  </section>
+
+  <!-- TABLE OF CONTENTS -->
+  <section class="toc">
+    <h2>Índice General</h2>
+    <ol>
+      <li><a href="#intro">El Secreto de los $10,000: Tu salud no es una deuda</a></li>
+      <li><a href="#sis">El Sistema Americano: Reglas de Oro para el Inmigrante</a></li>
+      <li><a href="#seg">Seguros Médicos: Cómo obtener subsidios máximos en 2026</a></li>
+      <li><a href="#der">Tus Derechos Legales: El Intérprete Gratis y la Ley EMTALA</a></li>
+      <li><a href="#trans">La Ley de Transparencia de 2026: Tu mayor arma financiera</a></li>
+      <li><a href="#neg">El Arte de la Negociación: Cómo reducir facturas de $5,000 a $0</a></li>
+      <li><a href="#charity">Charity Care: El programa "Secreto" que borra deudas médicas</a></li>
+      <li><a href="#emer">Manual de Supervivencia en Emergencias</a></li>
+      <li><a href="#far">Farmacia de Élite: Ahorrando el 80% en medicamentos de marca</a></li>
+      <li><a href="#prev">Plan de Mantenimiento Vital: Chequeos Gratuitos</a></li>
+      <li><a href="#dic">Diccionario de Poder: Glosario Bilingüe para Negociar</a></li>
+      <li><a href="#concl">Conclusión: Tu nueva vida bajo control</a></li>
+    </ol>
+  </section>
+
+  <!-- PAGE CONTENT -->
+  <div class="page-content">
+
+    <section id="intro">
+      <h1>Introducción</h1>
+      <p>Llegaste a este país para construir un futuro, no para heredar una deuda médica que te persiga por décadas. He visto familias perder sus ahorros de años por una sola factura de un hospital. <strong>Eso se termina hoy.</strong></p>
+      
+      <p>En este libro, no solo te enseñaré medicina. Te enseñaré <strong>estrategia</strong>. El sistema de salud en Estados Unidos es un laberinto financiero, pero todo laberinto tiene una salida para quien tiene el mapa. Este volumen de <em>Estrategia Vital</em> es ese mapa.</p>
+
+      <div class="highlight-box">
+        <strong>La Mentalidad del Experto:</strong>
+        En EE. UU., un hospital es una empresa. Como tal, sus facturas son negociables. Tu mayor error es aceptar la primera cifra que te envíen. Tu mayor acierto es leer este libro hasta el final.
+      </div>
+    </section>
+
+    <div class="chapter-divider">✦ ✦ ✦</div>
+
+    <section id="trans">
+      <h2>Capítulo 5: La Ley de Transparencia de 2026</h2>
+      <p>A partir de este año, los hospitales están obligados por ley a ser transparentes con sus precios. Ya no pueden esconder cuánto le cobran a una aseguradora y cuánto te cobran a ti. Esta es la base de tu defensa financiera.</p>
+
+      <h3>La Regla AGB (Amounts Generally Billed)</h3>
+      <p>Si calificas para asistencia financiera, el hospital tiene <strong>prohibido legalmente</strong> cobrarte más de lo que cobran "generalmente" a los seguros (Medicare o seguros privados). </p>
+      
+      <div class="highlight-box">
+        <strong>Impacto Real:</strong>
+        Si el precio de lista de una cirugía es de $50,000, pero Medicare paga solo $8,000, el hospital NO puede cobrarte a ti los $50,000 si calificas para ayuda. Con solo conocer este término, acabas de ahorrarte <span class="money-save">$42,000</span>.
+      </div>
+    </section>
+
+    <div class="chapter-divider">✦ ✦ ✦</div>
+
+    <section id="neg">
+      <h2>Capítulo 6: El Arte de la Negociación</h2>
+      <p>Negociar una factura médica no es pedir "por favor". Es exigir que se cumplan las reglas de transparencia y detectar los errores que el hospital comete en el 80% de los casos.</p>
+
+      <h3>Paso 1: La Factura Detallada (Itemized Bill)</h3>
+      <p>Nunca pagues una factura que solo dice "Servicios de Hospital: $5,400". Exige una <em>Itemized Bill</em> con códigos <strong>CPT</strong>.</p>
+
+      <table class="table-premium">
+        <thead>
+          <tr>
+            <th>Acción de Negociación</th>
+            <th>Qué decir en inglés</th>
+            <th>Resultado Esperado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Exigir factura detallada</td>
+            <td>"I need an itemized bill with CPT codes."</td>
+            <td>Detección de cargos dobles o errores.</td>
+          </tr>
+          <tr>
+            <td>Invocar ayuda financiera</td>
+            <td>"I want to apply for Financial Assistance / Charity Care."</td>
+            <td>Reducción del 50% al 100% de la deuda.</td>
+          </tr>
+          <tr>
+            <td>Oferta de pago único</td>
+            <td>"I can offer a one-time payment of 40% to settle this."</td>
+            <td>Cierre de la deuda con descuento masivo.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Táctica de Poder: El Código CPT</h3>
+      <p>Cada servicio médico tiene un código. Busca esos códigos en Google o en sitios como <em>Turquoise Health</em>. Si el hospital te cobra $500 por una aspirina (código de farmacia hospitalaria), puedes disputar ese cargo usando los precios promedio del mercado.</p>
+    </section>
+
+    <div class="chapter-divider">✦ ✦ ✦</div>
+
+    <section id="charity">
+      <h2>Capítulo 7: Charity Care (El Borrador de Deudas)</h2>
+      <p>Casi todos los hospitales sin fines de lucro en EE. UU. tienen una política de <strong>Charity Care</strong> (Cuidado de Caridad). Es una obligación legal para mantener su estatus de no pagar impuestos.</p>
+
+      <div class="highlight-box">
+        <strong>¿Quién califica?</strong>
+        Si tus ingresos familiares están por debajo del 200% o 300% del Nivel Federal de Pobreza (FPL), el hospital debe, en muchos casos, <strong>borrar tu factura por completo</strong>. No importa tu estatus migratorio. No importa si no tienes seguro.
+      </div>
+
+      <p>Para aplicar, debes solicitar la "Financial Assistance Policy" del hospital. Te pedirán pruebas de ingresos (talones de pago, declaración de impuestos o una carta explicando tu situación). </p>
+    </section>
+
+    <!-- ... Mas capitulos se irian expandiendo aqui siguiendo este estandar de lujo ... -->
+
+    <section id="far">
+      <h2>Capítulo 9: Farmacia de Élite</h2>
+      <p>No permitas que una receta médica rompa tu presupuesto mensual. El 2026 ha traído nuevas herramientas de comparación que debes dominar.</p>
+      
+      <div class="highlight-box">
+        <strong>Usa GoodRx como un profesional:</strong>
+        No aceptes el precio que te da el farmacéutico. Abre la app, busca el medicamento exacto y dile: "I have a coupon for this price". A veces la diferencia es de $200 a $15.
+      </div>
+    </section>
+
+    <div class="chapter-divider">✦ ✦ ✦</div>
+
+    <section id="concl">
+      <h2>Conclusión</h2>
+      <p>Tu salud es tu activo más valioso. Tu conocimiento es tu mejor defensa. Al terminar este primer volumen de <em>Estrategia Vital</em>, ya no eres un espectador pasivo del sistema; eres un navegante informado.</p>
+      
+      <p>Aplica lo aprendido. No tengas miedo de preguntar, de negociar y de exigir tus derechos. Este país se construyó para los valientes que se informan.</p>
+
+      <p style="margin-top:50px; text-align:center;">
+        <strong>Dr. Alexander Figueredo</strong><br>
+        <span style="color:var(--gold); font-size:0.9rem;">POR UNA COMUNIDAD SANA Y LIBRE</span>
+      </p>
+    </section>
+
+  </div>
+
+  <footer style="background:var(--deep-blue); color:var(--slate); text-align:center; padding:40px; font-size:0.8rem;">
+    © 2026 ESTRATEGIA VITAL · Dr. Alexander Figueredo · Houston, Texas<br>
+    Este material es educativo y no constituye asesoría legal ni médica.
+  </footer>
+
+</div>
+
+</body>
+</html>
